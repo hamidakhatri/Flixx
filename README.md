@@ -18,7 +18,9 @@
 <img src="http://g.recordit.co/fTLBgSqaMl.gif" width=250><br>
 
 ### Notes
-Describe any challenges encountered while building the app.
+- I created some double connections, which continously gave me an error. TA (Will) was able to help me pin point that error.
+- I learned that I had to pull before pushing the code to GitHub, even so that I had to commit out the files first, pull, then push the code to GitHub.
+- I learned a lot from this part of the project.
 
 ## Flix Part 1
 
