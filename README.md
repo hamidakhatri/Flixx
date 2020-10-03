@@ -1,6 +1,6 @@
 # Flixx
 
-## Flix Part 2
+## Flixx Part 2
 
 ### User Stories
 
@@ -22,7 +22,7 @@
 - I learned that I had to pull before pushing the code to GitHub, even so that I had to commit out the files first, pull, then push the code to GitHub.
 - I learned a lot from this part of the project.
 
-## Flix Part 1
+## Flixx Part 1
 
 Created "Flixx" an app that allows users to browse movies from the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
