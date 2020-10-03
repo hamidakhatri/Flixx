@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     // variables that you create are called properties
     
-    var movies = [[String : Any]]()
+    var movies = [[String:Any]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,15 +56,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
-        
         let movie = movies[indexPath.row]
         let title = movie["title"] as! String
-        let synonsis = movie["overview"] as! String
+        let synonsis = movie["overview"] as! String // Adding siwft optional
         
-        // adding siwft optional
         cell.titleLabel.text = title
         cell.synopsisLabel.text = synonsis
-        
         
         let baseURL = "https://image.tmdb.org/t/p/w185"
         let posterPath = movie["poster_path"] as! String
@@ -75,6 +72,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-
+    // MARK
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    // prepare the user to go to the next screen
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Sender is the cell that is tapped on
+        
+        // Get the new view controller using segue.destination.
+        // Pass the selected Object to the new vide controller.
+        
+        print("Loading up the details screen.")
+        
+        // Find the selected movie
+        
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let movie = movies[indexPath.row]
+        
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+        
+        detailsViewController.movie = movie
+        
+        // To deselect the selection when navigation
+        
+        tableView.deselectRow(at: indexPath,animated: true)
+        
+        
+        // Pass the selected movie to the details view controller
+        
+        
+        
+    }
 }
 
